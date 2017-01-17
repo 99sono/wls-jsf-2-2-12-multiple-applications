@@ -54,3 +54,7 @@ E.g.
 
 NOTE:
 If we go to the coide and remove the "reproducebug.SomeWebService" class from the package, the issue goes way.
+
+
+ISSUE OPEN ON:
+https://java.net/jira/browse/JAVASERVERFACES-4214
