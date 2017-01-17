@@ -1,0 +1,49 @@
+Multiple JSF Applications found on same ClassLoader.  Unable to safely determine which FactoryManager instance to use. Defaulting to first match.
+
+Daemon Thread [[STANDBY] ExecuteThread: '4' for queue: 'weblogic.kernel.Default (self-tuning)'] (Suspended (breakpoint at line 784 in java.util.logging.Logger))	
+	java.util.logging.Logger.log(java.util.logging.Level, java.lang.String) line: 784	
+	javax.faces.CurrentThreadToServletContext$FactoryManagerCacheKey.initFromFactoryMap(java.lang.ClassLoader, java.util.Map<javax.faces.CurrentThreadToServletContext.FactoryManagerCacheKey,javax.faces.FactoryFinderInstance>) line: 284	
+	javax.faces.CurrentThreadToServletContext$FactoryManagerCacheKey.<init>(javax.faces.context.FacesContext, java.lang.ClassLoader, java.util.Map<javax.faces.CurrentThreadToServletContext.FactoryManagerCacheKey,javax.faces.FactoryFinderInstance>) line: 256	
+	javax.faces.CurrentThreadToServletContext.getApplicationFactoryManager(java.lang.ClassLoader, boolean) line: 104	
+	javax.faces.CurrentThreadToServletContext.getApplicationFactoryManager(boolean) line: 97	
+	javax.faces.FactoryFinder.getFactory(java.lang.String) line: 277	
+	javax.faces.context.FacesContext.getCurrentInstance() line: 912	
+	com.sun.faces.application.WebappLifecycleListener.requestInitialized(javax.servlet.ServletRequestEvent) line: 176	
+	com.sun.faces.config.ConfigureListener.requestInitialized(javax.servlet.ServletRequestEvent) line: 390	
+	weblogic.servlet.internal.EventsManager.notifyRequestLifetimeEvent(javax.servlet.ServletRequest, boolean) line: 438	
+	weblogic.servlet.internal.RequestEventsFilter.doFilter(javax.servlet.ServletRequest, javax.servlet.ServletResponse, javax.servlet.FilterChain) line: 28	
+	weblogic.servlet.internal.FilterChainImpl.doFilter(javax.servlet.ServletRequest, javax.servlet.ServletResponse) line: 78	
+	weblogic.servlet.internal.WebAppServletContext$ServletInvocationAction.wrapRun(weblogic.servlet.internal.ServletStub, javax.servlet.http.HttpServletRequest, javax.servlet.http.HttpServletResponse) line: 3683	
+	weblogic.servlet.internal.WebAppServletContext$ServletInvocationAction.run() line: 3649	
+	weblogic.security.acl.internal.AuthenticatedSubject.doAs(weblogic.security.subject.AbstractSubject, java.security.PrivilegedAction) line: 326	
+	weblogic.security.service.SecurityManager.runAsForUserCode(weblogic.security.acl.internal.AuthenticatedSubject, weblogic.security.acl.internal.AuthenticatedSubject, java.security.PrivilegedAction<T>) line: 197	
+	weblogic.servlet.provider.WlsSecurityProvider.runAsForUserCode(weblogic.security.acl.internal.AuthenticatedSubject, java.security.PrivilegedAction, weblogic.security.acl.internal.AuthenticatedSubject) line: 203	
+	weblogic.servlet.provider.WlsSubjectHandle.run(java.security.PrivilegedAction) line: 71	
+	weblogic.servlet.internal.WebAppServletContext.doSecuredExecute(weblogic.servlet.internal.ServletInvocationContext, javax.servlet.http.HttpServletRequest, javax.servlet.http.HttpServletResponse, boolean, boolean, boolean) line: 2433	
+	weblogic.servlet.internal.WebAppServletContext.securedExecute(javax.servlet.http.HttpServletRequest, javax.servlet.http.HttpServletResponse, boolean) line: 2281	
+	weblogic.servlet.internal.WebAppServletContext.execute(weblogic.servlet.internal.ServletRequestImpl, weblogic.servlet.internal.ServletResponseImpl) line: 2259	
+	weblogic.servlet.internal.ServletRequestImpl.runInternal() line: 1691	
+	weblogic.servlet.internal.ServletRequestImpl.run() line: 1651	
+	weblogic.servlet.provider.ContainerSupportProviderImpl$WlsRequestExecutor.run() line: 270	
+	weblogic.invocation.ComponentInvocationContextManager._runAs(weblogic.invocation.ComponentInvocationContext, java.lang.Runnable) line: 348	
+	weblogic.invocation.ComponentInvocationContextManager.runAs(java.security.Principal, weblogic.invocation.ComponentInvocationContext, java.lang.Runnable) line: 333	
+	weblogic.work.LivePartitionUtility.doRunWorkUnderContext(java.lang.Runnable, weblogic.invocation.ComponentInvocationContext) line: 54	
+	weblogic.work.PartitionUtility.runWorkUnderContext(java.lang.Runnable, weblogic.invocation.ComponentInvocationContext) line: 41	
+	weblogic.work.ServerWorkManagerImpl(weblogic.work.SelfTuningWorkManagerImpl).runWorkUnderContext(weblogic.work.ExecuteThread, weblogic.work.WorkAdapter) line: 640	
+	weblogic.work.ExecuteThread.execute(weblogic.work.WorkAdapter) line: 406	
+	weblogic.work.ExecuteThread.run() line: 346	
+
+	
+CLASSLOADER:
+weblogic.utils.classloaders.ChangeAwareClassLoader@76a5a71c finder: weblogic.utils.classloaders.CodeGenClassFinder@32fc4043 annotation: ...
+MATCHING CLASS LOADER:
+weblogic.utils.classloaders.ChangeAwareClassLoader@76a5a71c finder: weblogic.utils.classloaders.CodeGenClassFinder@32fc4043 annotation: ...
+
+NOTE:
+- First factory finder instance =
+new java.util.ArrayList(factoryMap.values()).get(0).getClass().getResource("/javax/faces/FactoryFinderInstance.class")
+jar:file:/C:/dev/WLS_12_2_1_2_0/wlserver/modules/glassfish.jsf.jar!/javax/faces/FactoryFinderInstance.class
+
+- Second factory finder instance =
+new java.util.ArrayList(factoryMap.values()).get(1).getClass().getResource("/javax/faces/FactoryFinderInstance.class")
+jar:file:/C:/dev/WLS_12_2_1_2_0/wlserver/modules/glassfish.jsf.jar!/javax/faces/FactoryFinderInstance.class
